@@ -76,7 +76,7 @@ jobs:
           pass="${{ secrets.SCIEBO_CRPDATA_PWD }}"
         
     - name: Upload to sciebo using rclone 
-      run: rclone copy -P "${{ github.event.inputs.name }}.tar.gz*" sciebo:crp_storage/InstallationDownload/
+      run: rclone copy -P . sciebo:crp_storage/InstallationDownload/ --include "${{ github.event.inputs.name }}.tar.gz*"
 
     
         
